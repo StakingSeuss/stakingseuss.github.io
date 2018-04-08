@@ -2,13 +2,57 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Staking Seuss - Staking as a Service. Simplified.</title>
+    <title>Staking Seuss - XSN Staking as a Service.</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style media="screen">
+      /* Links */
+      a,
+      a:focus,
+      a:hover {
+      color: #fff;
+      }
+
+      /*
+      * Base structure
+      */
+
+      html,
+      body {
+      height: 100%;
+      background-color: #5649F7;
+      font-family: 'Montserrat', sans-serif;
+      }
+
+      body {
+      color: #fff;
+      /* text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .2);
+      box-shadow: inset 0 0 5rem rgba(0, 0, 0, .2); */
+      }
+      h1 {
+        font-weight: bold;
+      }
+
+      .countdown-container {
+        height: -o-calc(100% - 56px); /* opera */
+        height: -webkit-calc(100% - 56px); /* google, safari */
+        height: -moz-calc(100% - 56px); /* firefox */
+        display: flex;
+        align-items: center;
+      }
+
+      @media (max-width: 576px) {
+        .display-1 {
+          font-size: 4rem;
+        }
+      }
+
+  </style>
 
   </head>
   <body>
-    <nav class="navbar navbar-light bg-light">
+    <nav class="navbar navbar-light bg-white">
       <div class="container">
         <div class="row">
           <div class="col">
@@ -16,41 +60,13 @@
           </div>
         </div>
       </div>
-
     </nav>
-    <div class="jumbotron">
-      <div class="container">
-        <div class="row">
-          <div class="col">
-            <h1 class="display-3">Staking Simplified</h1>
-            <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-            <hr class="my-4">
-            <p>Signup to get early access!</p>
-            <p class="lead">
-              <form class="form-inline">
-                <label class="sr-only" for="inlineFormInputEmail">Email</label>
-                <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputEmail" placeholder="example@email.com">
-                <button type="submit" class="btn btn-primary mb-2">Notify me</button>
-              </form>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="container">
+
+    <div class="container countdown-container">
       <div class="row">
-        <div class="col-sm-12 col-md-4">
-          <h2>Heading 1</h2>
-          <p>Use your fucking hands. Learn from fucking criticism. Don’t fucking lie to yourself. Someday is not a fucking day of the week. Respect your fucking craft. Widows and orphans are terrible fucking tragedies, both in real life and definitely in typography. You need to sit down and sketch more fucking ideas because stalking your ex on facebook isn’t going to get you anywhere. Don’t worry about what other people fucking think. Creativity is a fucking work-ethic. When you design, you have to draw on your own fucking life experiences.</p>
-        </div>
-        <div class="col-sm-12 col-md-4">
-          <h2>Heading 2</h2>
-          <p>If it’s not something you would want to read/look at/use then why fucking bother? What’s important is the fucking drive to see a project through no matter what. A good fucking composition is the result of a hierarchy consisting of clearly contrasting elements set with distinct alignments containing irregular intervals of negative space. You won’t get good at anything by doing it a lot fucking aimlessly.</p>
-        </div>
-        <div class="col-sm-12 col-md-4">
-          <h2>Heading 3</h2>
-          <p>When you sit down to work, external critics aren’t the enemy. It’s you who you must to fight against to do great fucking work. You must overcome yourself. Design is all about fucking relationships—the relationship of form and content, the relationship of elements, the relationship.
-Intuition is fucking important. Can we all just agree as the greater design community to stop fucking talking about Comic Sans altogether? It’s getting fucking old.</p>
+        <div class="col my-5">
+          <h1 class="display-1">COMING SOON</h1>
+          <h2 class="lead" id="pageTimer"></h2>
         </div>
       </div>
     </div>
@@ -58,5 +74,15 @@ Intuition is fucking important. Can we all just agree as the greater design comm
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="js/countdown.js"></script>
+    <script type="text/javascript">
+        var timerId =
+        countdown(
+          new Date('April 21, 2018 00:00:00'),
+          function(ts) {
+            document.getElementById('pageTimer').innerHTML = ts.toHTML("strong");
+          },
+          countdown.DAYS|countdown.HOURS|countdown.MINUTES|countdown.SECONDS);
+    </script>
   </body>
 </html>
